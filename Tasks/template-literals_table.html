@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals Table</title>
+    
+</head>
+
+<body>
+
+    <div class="test">
+
+    </div>
+
+    <script>
+        // header = "Registration Table"
+        // heading = `<h2> ${header} </h2> <table border="1" style="background:lightblue"><tr>`;
+
+        // details = ["Aman", 22, "WD" ];
+
+        // for (x of details) {
+        //     heading += `<td>${x}</td>`;
+        // }
+
+        // heading += `</tr></table>`
+
+        // document.querySelector('.test').innerHTML = heading
+
+        header = "Registration Table"
+        heading = `<h2> ${header} </h2> <table border="1" style="background:lightblue"><tr>`;
+
+        details = [{
+            Name: "Aman", Age:"20", Course: "Frontend",
+            Name: "Aman", Age:"20", Course: "Frontend"
+        }];
+
+        for (x of details) {
+            heading += `<td>${x.Name}</td>`;
+        }
+
+        heading += `</tr></table>`
+
+        document.querySelector('.test').innerHTML = heading
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals</title>
+</head>
+<body>
+    <!-- Template Literals Concept :
+         Template literals allow you to use strings or embedded expressions in the form of a string. 
+         Its Syntax is (`Code..`) -->
+    <script>
+         // str1 = "hello 'Naishedh'...!";    Writing the string name using single/double quotes.
+         // str3 = "hello \"Naishedh\"...!";   Writing the string name using escape sequence.
+
+         literal = `Aman 
+         22
+         Frontend`
+
+         console.log(literal);  
+
+         // Unlike string in template literals we can write values in new line and it counts
+        
+        const  me = {
+            course :"Frontend",
+            centre : "Tops Technologies"
+         } 
+        
+          
+       info = () => 
+       {
+        return `I am percieving <b style= "Color: red"> ${me.course} </b>course in <b style= "Color: blue"> ${me.centre} </b>` 
+       }
+
+       document.write(info());
+
+        //  Here ${} is written to use the variable as a program in the string 
+
+    </script>
+</body>
+</html>

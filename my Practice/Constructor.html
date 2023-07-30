@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPs</title>
+</head>
+
+<body>
+    <!-- OOPs: Object Oriented Programing -->                                                                                               
+
+    <script>
+        // The simplest way to understand the class and object is class contains the data and with help of the object the data can be shown
+
+        class Aman {
+            fun1 = () => {
+                document.write("This is an example of abstraction" + "<br>")
+            }
+
+            fun2 = () => {
+                document.write("This is an another example of abstraction" + "<br>")
+            }
+
+            constructor(parameter1,parameter2) {
+                document.write("This is an  example of constructor" + " ")
+                document.write(parameter1 + parameter2 + "<br>")
+            }
+        }
+
+        const a = new Aman(2,4);
+
+        a.fun1();
+        a.fun2();
+
+
+            // Encapsulation : The process of hinding details/info of class is called encapsulation.
+            //  For example: In Bank person bank details the ATM pin of the user shoud not be shown.
+
+           // Abstraction : The process of accessing necessary details/info of class is called abstraction.
+
+          // Constructor : It's a magic function which will be called automatically when an object of a class is created.
+          //  The parameter of the constructor will always be stored in thr objects of parameter created
+          //    Constructor can be used only onced per class
+
+    </script>
+</body>
+
+</html>

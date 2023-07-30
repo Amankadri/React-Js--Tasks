@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+
+   <!-- Inheritance: 
+    => To access property of one class to another class we use Inheritance
+
+    ==> to reuse the code 
+
+    ==> keyword : extends 
+
+
+    Syntax : childClass extends ParentClass -->
+    
+    <script>
+        class Father 
+        {
+            x = function()
+            {
+                document.write("This is my 100% Property " + "<br>")
+            }
+        }
+
+        class Mother extends Father
+        {
+           y= () =>
+           {
+            document.write("The Property of Son will be 10%" + "<br>")
+           }
+
+           z= () =>
+           {
+            document.write("The Property of Daughter will be 90%" + "<br>")
+           }
+        }
+
+        class Son extends Mother
+        {
+
+        }
+
+        class Daughter extends Mother
+        {
+
+        }
+
+        const a = new Mother;
+        const a1 = new Son;
+        const a2 = new Daughter;
+        a.x();
+        a1.y();
+        a2.z();
+    </script>
+</body>
+</html>
