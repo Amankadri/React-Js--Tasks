@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // sum= phy+chem+bio/3;
+        const Student = {
+            name: "Bhavesh ",
+            phy:32,
+            chem:45,
+            bio:23,
+            sum : function (){
+                return this.name + "<br>" + (this.phy + this.chem + this.bio);
+            },
+            avg : function (){
+                return this.name + "<br>" + (this.phy + this.chem + this.bio)/3;
+            },
+            Percentage : function (){
+                return "<br>" + ((this.phy + this.chem + this.bio)/3)*100;
+            },
+        }
+        document.write(Student.sum());
+        document.write(Student.avg());
+        document.write(Student.Percentage())
+    </script>
+</body>
+</html>
