@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals Table</title>
+    
+</head>
+
+<body>
+
+    <div class="test">
+
+    </div>
+
+    <script>
+        // header = "Registration Table"
+        // heading = `<h2> ${header} </h2> <table border="1" style="background:lightblue"><tr>`;
+
+        // details = ["Aman", 22, "WD" ];
+
+        // for (x of details) {
+        //     heading += `<td>${x}</td>`;
+        // }
+
+        // heading += `</tr></table>`
+
+        // document.querySelector('.test').innerHTML = heading
+
+        // header = "Registration Table"
+        // heading = `<h2> ${header} </h2> <table border="1" style="background:lightblue">`;
+
+        // details = [
+        //    {Name: "Aman", Age:"20", Course: "Frontend"},
+        //    { Name: "Aamena", Age:"20", Course: "Frontend"}
+        // ]
+
+        // for (x  in  details) {
+        //     heading += `<tr> <td>${details[x].Name}</td> </tr>`;
+        //     heading += `<tr><td>${details[x].Age}</td></tr>`;
+        // }
+
+        // heading += `</table>`
+
+        // document.querySelector('.test').innerHTML = heading
+
+        let students = [
+            {name:'aman', age:51},
+            {name:'aamena', age:81},
+        ]
+
+        for(x in students){
+            `<table border='2px' cellspacing='4px'>`
+            document.write(`<tr><td>${students[x].name}</td></tr>`)
+
+            `</table>`
+        }
+
+
+
+    </script>
+</body>
+
+</html>
