@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mother
+        {
+            constructor(prop)
+            {
+               this.prop= prop;
+            }
+
+            show()
+            {
+                `Mother Property is ${this.prop}%`
+                return this.prop;
+            }
+        }
+
+        class Son extends Mother
+        {
+              constructor(prop,share)
+              {
+                super(prop);
+                this.share=share;
+              }
+
+              property()
+              {
+                console.log(`Son Property is ${this.share * this.show()}% `)
+              }
+        }
+
+        class Daughter extends Mother
+        {
+            constructor(prop,share)
+              {
+                super(prop);
+                this.share=share;
+              }
+
+              part()
+              {
+                console.log(`Daughter Property is ${this.share * this.show()}% `)
+              }
+        }
+
+        let a = new Son(100,0.1);
+        let a1 = new Daughter(100,0.9);
+
+       console.log(`Mother Property is ${ a.show()}%`);
+        a.property();
+        a1.part();
+    </script>
+</body>
+</html>

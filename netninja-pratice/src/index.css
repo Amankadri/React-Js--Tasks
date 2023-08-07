@@ -54,3 +54,27 @@
   border: none;
   padding: 5px;
 }
+
+.blog-preview
+{
+  width: 200px;
+  margin: 30px  auto;
+  
+}
+
+.blog-preview h2
+{
+  color: crimson;
+}
+
+.blog-preview:hover
+{
+  border-bottom: 1px solid rgb(197, 195, 195);
+}
+
+.blog-list h2
+{
+  width: 200px;
+  margin: 10px  auto;
+}
+
