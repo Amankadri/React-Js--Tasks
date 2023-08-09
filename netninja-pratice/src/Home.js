@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./blog-list";
 
 const Home = () => {
@@ -29,6 +29,13 @@ const Home = () => {
         console.log("Hello" + name)
     }
 
+    const [name, setFname]= useState('Aman')
+
+    useEffect(()=> 
+    {
+        fetch(' http://localhost:8001/blogs')
+    },[])
+
     return ( 
         <div className="home">
             <h1>Homepage</h1>
@@ -45,7 +52,9 @@ const Home = () => {
             }}>Click me again</button>
 
         <BlogList blogs={blog} title="All Blogs!" handleDelete={handleDelete}/>
-        <BlogList blogs={blog.filter((blog)=> blog.author==='Aman')} title="Aman's Blogs!"/>
+        <button onClick={()=> setFname('Batman')}>Change name</button>
+        <p>{name}</p>
+        {/* <BlogList blogs={blog.filter((blog)=> blog.author==='Aman')} title="Aman's Blogs!"/> */}
         </div>
 
         
