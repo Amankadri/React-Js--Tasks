@@ -3,17 +3,22 @@ import BlogList from "./blog-list";
 
 const Home = () => {
    
-    const [blog, setBlog]= useState([
-        { title: 'My new website', body: 'lorem ipsum....', author: 'Aman', id:'1'},
-        { title: 'Welcome party', body: 'lorem ipsum....', author: 'Batman', id:'2'},
-        { title: 'Web dev top tips', body: 'lorem ipsum....', author: 'Aman', id:'3'}
-    ])
+    const [blog, setBlog]= useState(
+    //     [
+    //     { title: 'My new website', body: 'lorem ipsum....', author: 'Aman', id:'1'},
+    //     { title: 'Welcome party', body: 'lorem ipsum....', author: 'Batman', id:'2'},
+    //     { title: 'Web dev top tips', body: 'lorem ipsum....', author: 'Aman', id:'3'}
+    // ]
+   null )
 
-    const handleDelete = (id) =>{
-        const newBlogs= blog.filter(blog => blog.id !== id);
-        setBlog(newBlogs);
+   const[isLoading, setisLoading]= useState(true)
+   const[error, setError]= useState(null)
 
-    }
+    // const handleDelete = (id) =>{
+    //     const newBlogs= blog.filter(blog => blog.id !== id);
+    //     setBlog(newBlogs);
+
+    // }
   const[fullname, setName]= useState('Aman');
   const[age, setAge]= useState(20);
 
@@ -27,17 +32,42 @@ const Home = () => {
     const handleClickAgain= (name) =>
     {
         console.log("Hello" + name)
-    }
+    } 
 
     const [name, setFname]= useState('Aman')
 
     useEffect(()=> 
     {
-        fetch(' http://localhost:8001/blogs')
+        setTimeout(() => {
+            fetch('http://localhost:8000/blgs')
+        .then(res =>{
+           
+            if(!res.ok)
+            {
+                throw Error('could not fetch the error of that resource');
+            }
+            return res.json();
+        })
+        .then( data =>
+            {
+                setBlog(data);
+                setisLoading(false);
+                setError(null);
+            })
+        .catch(err =>
+            {
+                setisLoading(false);
+                setError(err.message);   
+            })    
+        }, );
+             
     },[])
 
     return ( 
         <div className="home">
+              { isLoading && <div>Loading.....</div>}
+                {error && <div>{error}</div>}
+
             <h1>Homepage</h1>
             <p>{fullname} is {age} years old  </p>
             <button onClick={handleClick} style ={{
@@ -50,8 +80,8 @@ const Home = () => {
             {
                 handleClickAgain(" Aman")
             }}>Click me again</button>
-
-        <BlogList blogs={blog} title="All Blogs!" handleDelete={handleDelete}/>
+ 
+        {blog && <BlogList blogs={blog} title="All Blogs!" />}
         <button onClick={()=> setFname('Batman')}>Change name</button>
         <p>{name}</p>
         {/* <BlogList blogs={blog.filter((blog)=> blog.author==='Aman')} title="Aman's Blogs!"/> */}
