@@ -39,7 +39,7 @@ const Home = () => {
     useEffect(()=> 
     {
         setTimeout(() => {
-            fetch('http://localhost:8000/blgs')
+            fetch('http://localhost:8000/blogs')
         .then(res =>{
            
             if(!res.ok)
@@ -59,7 +59,7 @@ const Home = () => {
                 setisLoading(false);
                 setError(err.message);   
             })    
-        }, );
+        }, 1000);
              
     },[])
 
