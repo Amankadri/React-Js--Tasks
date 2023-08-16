@@ -1,11 +1,11 @@
-const RegisterData = ({aman}) => {
+const RegisterData = ({aman,}) => {
     return ( 
         <div className="dataRegister">
-            {aman.map((register)=>(
+            {((register)=>(
                 <div className="datapreview" key={register.id}>
                     <p>{register.email}</p>
-                    <p>{register.password}</p>
-                    <p>{register.number}</p>
+                    <div>{register.password}</div>
+                    <div>{register.number}</div>
                 </div>
             ))}
         </div>

@@ -1,10 +1,10 @@
 {
-    "register": [
-      {
-        "email": "",
-        "password":"",
-        "number": "",
-        "id": 1
-      }
-    ]
-  }
+  "register": [
+    {
+      "email": "amankadri12@gmail.com",
+      "password": "iambatman",
+      "number": "5687432158",
+      "id": 5
+    }
+  ]
+}

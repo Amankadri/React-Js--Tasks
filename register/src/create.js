@@ -6,7 +6,7 @@ const Create = () => {
     const[number, setNumber] = useState('');
 
     const handleSubmit = (e)=>{
-        e.preventDefault();
+        // e.preventDefault();
         const register = {email, password, number};
 
         fetch('http://localhost:8000/register', {
