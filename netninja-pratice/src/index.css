@@ -70,7 +70,8 @@
 
 .blog-preview:hover
 {
-  border-bottom: 1px solid rgb(197, 195, 195);
+  /* border-bottom: 1px solid rgb(197, 195, 195); */
+  box-shadow: 2px 2px 4px rgb(197, 195, 195);
 }
 
 .blog-list h2
@@ -158,6 +159,11 @@
 .notFound a
 {
   text-decoration: none;
-  color: crimson;
+  /* color: crimson; */
   font-size: 22px;
+}
+
+.notFound a:hover
+{
+  color: crimson;
 }

@@ -28,32 +28,32 @@ const Home = () => {
 
     const [name, setFname]= useState('Aman')
 
-    useEffect(()=> 
-    {
-        setTimeout(() => {
-            fetch('http://localhost:8000/blgs')
-        .then(res =>{
+    // useEffect(()=> 
+    // {
+    //     setTimeout(() => {
+    //         fetch('http://localhost:8000/blogs')
+    //     .then(res =>{
            
-            if(!res.ok)
-            {
-                throw Error('could not fetch the error of that resource');
-            }
-            return res.json();
-        })
-        .then( data =>
-            {
-                setBlog(data);
-                setisLoading(false);
-                setError(null);
-            })
-        .catch(err =>
-            {
-                setisLoading(false);
-                setError(err.message);   
-            })    
-        }, );
+    //         if(!res.ok)
+    //         {
+    //             throw Error('could not fetch the error of that resource');
+    //         }
+    //         return res.json();
+    //     })
+    //     .then( data =>
+    //         {
+    //             setBlog(data);
+    //             setisLoading(false);
+    //             setError(null);
+    //         })
+    //     .catch(err =>
+    //         {
+    //             setisLoading(false);
+    //             setError(err.message);   
+    //         })    
+    //     }, );
              
-    },[])
+    // },[])
 
     return ( 
         <div className="home">
