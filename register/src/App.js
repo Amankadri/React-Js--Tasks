@@ -23,9 +23,9 @@ function App() {
        {/* {failed && <p>Invalid Credentials</p>} */}
        
        <Routes>
-       <Route exact path="/" element={<Register/> }></Route>
+       <Route  path="/" element={<Register/> }></Route>
      <Route path="/registerdetails" element={<RegisterDetails/>}>  </Route>
-      <Route path ="/create" element={ <Create/>}></Route>
+      {/* <Route path ="/create" element={ <Create/>}></Route>? */}
       <Route path="/success" element={<Success/>}> </Route>
      <Route path ="/login"element={ <Login/>}></Route>
             

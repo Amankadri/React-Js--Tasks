@@ -1,56 +1,69 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Register from "./register";
+import Success from "./success";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const[password, setPassword]= useState('');
     const[number, setNumber] = useState('');
     const [failed, setFailed]= useState(false);
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
     
-        const handleSubmit =  async(e) => {
-            e.preventDefault();
-            try {
-                const response = await fetch('http://localhost:8000/register', {
-                  method: 'Get',
-                  headers: { 'Content-Type': 'application/json' },
-                //   body: JSON.stringify({ email, password }),
-                });
-          
-                if (response.ok) {
-                  const register = await response.json();
-                  console.log("Logged in")
-                  navigate('/success')
-                  // Handle successful login, store token, update state, etc.
-                } else {
-                    console.log("false in")
-                  // Handle login error, show an error message, etc.
-                }
-              } catch (error) {
-                console.error('Error during login:', error);
-              }
-
-           
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    
+      fetch('http://localhost:8000/register')
+        .then((res) => res.json())
+        .then((users) => {
+          console.log(users);
+    
+          const foundUser = users.find((user) => user.email === email);
+    
+          if (!foundUser) {
+            setFailed(true); // No user found, show login failure
+          } else {
+            if (foundUser.password === password) {
+              setFailed(false); // Password matches, reset login failure state
+              navigate('/success'); // Navigate to the success page
+            } else {
+              setFailed(true); // Password doesn't match, show login failure
+            }
+          }
+        });
+    };
+    
        
-        // const register = {email, password, number};
+    
 
-        // fetch('http://localhost:8000/register', {
-        //     method: "Get",
-        //     headers: {"Content-Type": "application/json" },
-        //     body: JSON.stringify(register)   
-        //   }).then(()=> {
-        //     console.log('new blog added')
-        //     navigate('/success')
-          
-        //   })
-        //   .catch(()=>
-        //   {
-        //     console.log('Invalid credentials'); 
-        //     setFailed(true)  
-        //   })
-    }
+    // const handleSubmit = async (e) => {
+    //   e.preventDefault();
+  
+    //   try {
+    //      const response = await fetch('http://localhost:8000/register', 
+    //      {
+    //        method: 'POST',
+    //        headers: {
+    //         'Content-Type': 'application/json',
+    //        },
+    //        body: JSON.stringify({ email, password }),
+    //     }
+    //     );
+  
+    //     if (response.ok) {
+    //       const data = await response.json();
+    //       console.log('Login successful', data);
+    //       // navigate('/success');
+    //     } else {
+    //       setFailed(true);
+    //       console.log('Login failed');
+    //     }
+    //   } catch (error) {
+    //     console.error('Error during login:', error);
+    //     setFailed(true);
+    //   }
+
+    
 
     return (  
         <div className="login">
@@ -85,7 +98,7 @@ const Login = () => {
            
          </form>
 
-         {/* {failed && <p>Invalid Credentails</p>} */}
+         {failed && <p>Invalid Credentails</p>}
         </div>
     );
 }
