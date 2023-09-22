@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
     const[data, setData] = useState("");
-    const[invalid, setInvalid] = useState(null)
+    const[invalid, setInvalid]= useState(null)
 
     useEffect(()=>
     {
@@ -10,11 +10,8 @@ const useFetch = (url) => {
        .then(res => {return res.json()})
        .then(data => {
         setData(data);
+        setInvalid(false)
        })
-       .catch(err=>
-        {setData(false);
-            setInvalid(true);}
-       )
     },[url])
 
     return {data, invalid};

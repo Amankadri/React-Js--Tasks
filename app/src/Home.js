@@ -1,22 +1,33 @@
-import {useState} from 'react';
+import {useState, React} from 'react';
 
-const Home = () => {
-    const [blog, setBlog]= useState([
-        { title: 'My new website', body: 'lorem ipsum....', author: 'Aman', id:'1'},
-        { title: 'Welcome party', body: 'lorem ipsum....', author: 'Batman', id:'2'},
-        { title: 'Web dev top tips', body: 'lorem ipsum....', author: 'Luffy', id:'3'}
-    ])
 
-    return (  
-        <div className="home">
-          {blog.map((blog)=> (
-              <div className="blog-preview" key={blog.id}>
-                <h2>{blog.title}</h2>
-                <p>Written by {blog.author}</p>
-              </div>
-          ))}
-        </div>
-    );
+const Changedetails = () => {
+
+  const [data, setData]= useState({
+    fname: "Aman",
+    lname: "Kadri",
+    email: "kadriaman2@gmail.com"
+  })
+
+
+  return ( 
+       <div>
+         FirstName: <input type="text"     onBlur={(e)=>
+        setData({...data,
+         fname: e.target.value})}/>
+         <p>{data.fname}</p>
+
+         Lastname: <input type="text"  value={data.lname} onChange={(e)=>
+        setData({...data,
+         lname: e.target.value})}/>
+         <p>{data.lname}</p>
+
+         Email: <input type="text"  value={data.email} onChange={(e)=>
+        setData({...data,
+         email: e.target.value})}/>
+         <p>{data.email}</p>
+       </div>
+   );
 }
  
-export default Home;
+export default Changedetails;
