@@ -1,18 +1,23 @@
-
-
-
-.App
-{
-  background: blue;
-  color: white;
-}
-
-.flex{
-  display: flex;
+.App {
+  background: #003b95;
+  position: relative;
   
 }
-
-.flex2{
-  display: flex;
-  justify-content: end  ;
+.a{
+  margin-bottom: 80px;
 }
+.button-1{
+  border: none;
+  padding: 5px 15px;
+  border-radius: 3px;
+  color: blue;
+  background: #ffff;
+}
+
+.w  .active{
+  padding: 5px 15px;
+  border: 1px solid ;
+  border-radius: 20px;
+  background: rgb(223, 221, 221, 0.1);
+}
+

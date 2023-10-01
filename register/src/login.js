@@ -68,7 +68,7 @@ const Login = () => {
     return (  
         
         <div className="login">
-            {invalid && <div> Invalid Credentails</div>}
+            {failed && <div> Invalid Credentails</div>}
             <h1>Login </h1>
           <form  onSubmit={handleSubmit}>
     <tr>

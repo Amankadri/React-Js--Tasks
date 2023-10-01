@@ -1,4 +1,5 @@
 import {useState, React} from 'react';
+import TodoList from './to_do';
 
 
 const Changedetails = () => {
@@ -26,6 +27,7 @@ const Changedetails = () => {
         setData({...data,
          email: e.target.value})}/>
          <p>{data.email}</p>
+         <TodoList/>
        </div>
    );
 }

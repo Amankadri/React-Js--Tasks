@@ -1,15 +1,24 @@
 // import logo from './logo.svg';
 import './App.css';
 import Changedetails from './Home';
-import TodoList from './to_do';
+
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import SearchFilter from './SearchFilter';
 
 
 function App() {
   return (
-    <div className="App">
-     <Changedetails/>
-     <TodoList/>
+  <Router>
+      <div className="App">
+        <Link to='/' style={{margin:"20px",}}><span>Home</span></Link>
+        <Link to='/search'><span>Search Filter</span></Link>
+     <Routes>
+     
+     <Route  path="/" element={<Changedetails/> }></Route>
+     <Route  path="/search" element={<SearchFilter/> }></Route>
+     </Routes>
     </div>
+  </Router>
   );
 }
 
