@@ -21,3 +21,55 @@
   background: rgb(223, 221, 221, 0.1);
 }
 
+.section-1 {
+  background-color: #003B95;
+  padding: 0px 200px !important;
+  position: relative;
+}
+
+.question-mark {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.button-1 {
+  background-color: white;
+  color: #006CE4;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border: none;
+  box-shadow: 1px 1px 0px white;
+  border-radius: 3px;
+  margin: 0px -8px;
+}
+
+
+.buttons span {
+  padding: 5px 20px 7px 20px;
+  border-radius: 25px;
+}
+
+.buttons span:hover {
+  background-color: #0671e985;
+}
+
+
+.buttons .active {
+  background-color: #0671e985;
+  border: 1px solid white;
+}
+
+.text {
+  padding: 55px 0px;
+}
+
+/* .position {
+  position: absolute;
+  top: 90%;
+  left: 10%;
+} */
+
+/* .rounded-2 {
+  margin: -25px;
+} */

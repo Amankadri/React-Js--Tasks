@@ -20,7 +20,7 @@ function Booking() {
                 <button className='button-1'>Sign in</button>
             </Col>
         </Row>
-        <Row className='w'>
+        <Row className='w' style={{marginBottom:"-20px"}}>
             <Col className='d-flex buttons gap-1 align-items-center text-start mb-2'>
                 <span className='active'>Stays</span>
                 <span>Flights</span>
@@ -32,7 +32,7 @@ function Booking() {
         </Row>
     </Container>
     <Container>
-        <Row className='text'>
+        <Row className='text' style={{marginBottom:"40px"}}>
             <Col className='col-12  align-items-center text-start' >
                 <p className='display-5 fw-bold'>Find your next stay</p>
             </Col>
@@ -42,7 +42,7 @@ function Booking() {
         </Row>
     </Container>
     <Container>
-        <Row className='rounded-2 d-flex bg-warning text-start'>
+        <Row className='rounded-2 d-flex bg-warning text-start' style={{margin:"-66px"}}>
             <Col className='booking my-1'>
                 <button className='px-5 border-0 me-1 py-2 w-25 rounded-2'>Novalija</button>
                 <button className='px-5 border-0 py-2 me-1 rounded-2'>Check-in date - Check-out date</button>
