@@ -12,7 +12,7 @@ const Changedetails = () => {
 
 
   return ( 
-       <div>
+       <div className='home'>
          FirstName: <input type="text"     onBlur={(e)=>
         setData({...data,
          fname: e.target.value})}/>

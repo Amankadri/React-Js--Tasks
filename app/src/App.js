@@ -10,7 +10,7 @@ function App() {
   return (
   <Router>
       <div className="App">
-        <Link to='/' style={{margin:"20px",}}><span>Home</span></Link>
+        <Link to='/'><span>Home</span></Link>
         <Link to='/search'><span>Search Filter</span></Link>
      <Routes>
      
