@@ -73,3 +73,10 @@
 /* .rounded-2 {
   margin: -25px;
 } */
+
+.rdrCalendarWrapper
+{
+  position: absolute;
+  top: 100%;
+  right: 46%;
+}
