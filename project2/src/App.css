@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+label{
+  display: block;
+}
+
+
+.panel-light 
+{
+  background: #fff;
+  color: #000;
+}
+
+.panel-dark 
+
+{
+  background: #000;
+  color: #fff;
+}
