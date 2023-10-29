@@ -80,3 +80,7 @@
   top: 100%;
   right: 46%;
 }
+
+.border1{
+  outline: 5px solid goldenrod;
+}
