@@ -30,7 +30,7 @@ function SearchFilter() {
               <th>Last Name</th>
               <th>Email</th>
               <th>Phone</th>
-            </tr>
+            </tr>     
           </thead>
           <tbody>
             {data.filter((item)=>{

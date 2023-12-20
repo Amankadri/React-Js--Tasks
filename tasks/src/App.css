@@ -1,0 +1,18 @@
+
+
+button{
+  padding: 7px 15px;
+  font-size: 20px;
+}
+
+.light{
+  height: 200px;
+  width: 200px;
+  background: red;
+}
+
+.dark{
+  height: 200px;
+  width: 200px;
+  background: blueviolet;
+}

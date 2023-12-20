@@ -9,25 +9,50 @@ function App() {
   const[theme, setTheme]= useState("light");
   const[currentUser, setCurrentUser]= useState('');
   return (
-    <div className="App">
+  
       <ThemeContext.Provider value={theme}>
         <AuthContext.Provider value={{
           currentUser,
           setCurrentUser
         }}>
-          <Panel title="Welcome"/>
-           <LoginForm/>  
+            <div className="App">
+          <WelcomePanel/>
            <label>
             <input type='checkbox'
-            checked={theme=='dark'}
+            checked={theme==='dark'}
             onChange={(e)=>{setTheme(e.target.checked ? 'dark': 'light')}}/> Use dark mode
            </label>
+           </div>
 
         </AuthContext.Provider>
       </ThemeContext.Provider>
     
-    </div>
+    
   );
+}
+
+function WelcomePanel()
+{
+  const {currentUser}= useContext(AuthContext)
+  return(
+    <>
+    <Panel title="Welcome">
+     {
+      (currentUser!=="") ? <Welcome/> : <LoginForm/>
+     }        
+    </Panel>
+    </>
+  )
+}
+
+function Welcome()
+{
+  const {currentUser}= useContext(AuthContext)
+  return(
+    <>
+    <b>You Welcomed as {currentUser.name} </b>
+    </>
+  )
 }
 
 function Panel({title,children})
@@ -47,11 +72,11 @@ function Panel({title,children})
 
 function LoginForm()
 {
-  const CurrentUser = useContext(AuthContext)
+  const {setCurrentUser} = useContext(AuthContext)
   const [firstname,setFirstname]= useState("");
   const [lastname,setLastname]= useState("");
 
-  let canlogin = firstname!="" && lastname!=""
+  let canlogin = firstname!=="" && lastname!==""
  return(
   <>
   <label>
@@ -70,7 +95,11 @@ function LoginForm()
    />
   </label>
 
-  <Button disabled={!canlogin}>
+  <Button disabled={!canlogin} onClick={()=>{
+        setCurrentUser({
+          name: firstname +''+ lastname
+        })
+  }}>
    Login
   </Button>
 </>
